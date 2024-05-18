@@ -44,7 +44,7 @@ function calculateTotal(cart,req){
     return total;
 }
 
-app.get('/', async (req, res) => {
+app.get('/', async (req, res , param) => {
     try {
         const result = await pool.query('SELECT * FROM "Products"');
         res.render('pages/index', { result: result.rows });
